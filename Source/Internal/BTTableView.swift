@@ -28,7 +28,7 @@ class BTTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     // Public properties
     var configuration: BTConfiguration!
     var selectRowAtIndexPathHandler: ((_ indexPath: Int) -> ())?
-    
+    var textLabelColor:UIColor?
     // Private properties
     var items: [String] = []
     var selectedIndexPath: Int?
@@ -75,8 +75,14 @@ class BTTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(indexPath.row == selectedIndexPath) {
+            self.textLabelColor = self.configuration.selectedCellTextLabelColor
+        } else {
+            self.textLabelColor = self.configuration.cellTextLabelColor
+        }
         let cell = BTTableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell", configuration: self.configuration)
         cell.textLabel?.text = self.items[(indexPath as NSIndexPath).row]
+        cell.textLabel?.textColor = self.textLabelColor ?? self.configuration.cellTextLabelColor
         cell.checkmarkIcon.isHidden = ((indexPath as NSIndexPath).row == selectedIndexPath) ? false : true
         return cell
     }
