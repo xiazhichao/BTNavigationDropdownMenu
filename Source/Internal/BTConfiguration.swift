@@ -35,6 +35,7 @@ final class BTConfiguration {
     var cellTextLabelAlignment: NSTextAlignment!
     var cellSelectionColor: UIColor?
     var checkMarkImage: UIImage!
+    var checkMarkImageSize: CGFloat!
     var shouldKeepSelectedCellColor: Bool!
     var arrowTintColor: UIColor?
     var arrowImage: UIImage!
@@ -65,6 +66,7 @@ final class BTConfiguration {
         self.cellTextLabelAlignment = NSTextAlignment.left
         self.cellSelectionColor = UIColor.lightGray
         self.checkMarkImage = UIImage(contentsOfFile: checkMarkImagePath!)
+        self.checkMarkImageSize = 16
         self.shouldKeepSelectedCellColor = false
         self.animationDuration = 0.5
         self.arrowImage = UIImage(contentsOfFile: arrowImagePath!)

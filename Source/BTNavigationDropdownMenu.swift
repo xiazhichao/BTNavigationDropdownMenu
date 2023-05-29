@@ -148,6 +148,15 @@ open class BTNavigationDropdownMenu: UIView {
             self.configuration.checkMarkImage = value
         }
     }
+    
+    open var checkMarkImageSize: CGFloat! {
+        get {
+            return self.configuration.checkMarkImageSize
+        }
+        set(value) {
+            self.configuration.checkMarkImageSize = value
+        }
+    }
 
     // The boolean value that decides if selected color of cell is visible when the menu is shown. Default is false
     open var shouldKeepSelectedCellColor: Bool! {
