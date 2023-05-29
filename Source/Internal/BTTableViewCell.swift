@@ -52,11 +52,11 @@ class BTTableViewCell: UITableViewCell {
         
         // Checkmark icon
         if self.textLabel!.textAlignment == .center {
-            self.checkmarkIcon = UIImageView(frame: CGRect(x: cellContentFrame.width - checkmarkIconWidth, y: (cellContentFrame.height - 30)/2, width: configuration.checkMarkImageSize, height: configuration.checkMarkImageSize))
+            self.checkmarkIcon = UIImageView(frame: CGRect(x: cellContentFrame.width - checkmarkIconWidth, y: (cellContentFrame.height - configuration.checkMarkImageSize)/2, width: configuration.checkMarkImageSize, height: configuration.checkMarkImageSize))
         } else if self.textLabel!.textAlignment == .left {
-            self.checkmarkIcon = UIImageView(frame: CGRect(x: cellContentFrame.width - checkmarkIconWidth, y: (cellContentFrame.height - 30)/2, width: configuration.checkMarkImageSize, height: configuration.checkMarkImageSize))
+            self.checkmarkIcon = UIImageView(frame: CGRect(x: cellContentFrame.width - checkmarkIconWidth, y: (cellContentFrame.height - configuration.checkMarkImageSize)/2, width: configuration.checkMarkImageSize, height: configuration.checkMarkImageSize))
         } else {
-            self.checkmarkIcon = UIImageView(frame: CGRect(x: horizontalMargin, y: (cellContentFrame.height - 30)/2, width: configuration.checkMarkImageSize, height: configuration.checkMarkImageSize))
+            self.checkmarkIcon = UIImageView(frame: CGRect(x: horizontalMargin, y: (cellContentFrame.height - configuration.checkMarkImageSize)/2, width: configuration.checkMarkImageSize, height: configuration.checkMarkImageSize))
         }
         self.checkmarkIcon.isHidden = true
         self.checkmarkIcon.image = self.configuration.checkMarkImage
